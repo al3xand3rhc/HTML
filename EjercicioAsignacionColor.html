@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Protest+Revolution&family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        .cuadrado 
+        {
+            width: 600px;
+            height: 300px;
+            font-size: 80px;
+            text-align: center;
+            float: left;
+            margin: 3px;
+            background-color: #A2D9F5; 
+        }
+
+        #cuadrado1 
+        {
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #cuadrado2 
+        {
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #cuadrado3
+        {
+            font-family: "Wallpoet", sans-serif;
+            font-weight: 400;
+            font-style: normal; 
+        }
+        #cuadrado4
+        {
+            font-family: "Protest Revolution", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }    
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="Entrada" placeholder="Color">
+    <p id="color"></p> 
+
+    <div id="cuadrado1" class="cuadrado"> <p style="color: white;">Len</p></div>
+    <div id="cuadrado2" class="cuadrado"> <p style="color: white;">guaje</p></div>
+    <div id="cuadrado3" class="cuadrado"> <p>IV</p></div>
+    <div id="cuadrado4" class="cuadrado"> <p>P1-2024</p></div>
+
+    <script type="text/javascript">
+        document.getElementById("cuadrado1").onclick = function(){
+            var color = document.getElementById("Entrada").value
+            document.getElementById("cuadrado1").style.backgroundColor = color;
+        }
+
+        document.getElementById("cuadrado2").onclick = function(){
+            var color = document.getElementById("Entrada").value
+            document.getElementById("cuadrado2").style.backgroundColor = color;
+        }
+
+        document.getElementById("cuadrado3").onclick = function(){
+            var color = document.getElementById("Entrada").value
+            document.getElementById("cuadrado3").style.backgroundColor = color;
+        }
+
+        document.getElementById("cuadrado4").onclick = function(){
+            var color = document.getElementById("Entrada").value
+            document.getElementById("cuadrado4").style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>

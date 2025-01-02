@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Reflejos</title>
+
+    <style type="text/css">
+        .forma {
+            position: relative;
+        }
+        
+        .cuadrado {
+            border-radius: 0; 
+        }
+        
+        .circulo {
+            border-radius: 50%; 
+        }
+    </style>
+</head>
+<body>
+    <p>Tiempo de reacción: <span id="tiempoReaccion"></span></p>
+    <div id="forma" class="forma"></div>
+    <script type="text/javascript">
+        var inicio = new Date().getTime(); // Variable global
+
+        aparecerFormaDespuesRetraso();
+
+        document.getElementById("forma").onclick = function () {
+            document.getElementById("forma").style.display = "none";
+            var fin = new Date().getTime();
+            var diferencia = (fin - inicio) / 1000;
+            document.getElementById("tiempoReaccion").innerHTML = diferencia + "s";
+            aparecerFormaDespuesRetraso();
+        }
+
+        function aparecerForma()
+        {
+            var vtop = Math.floor(Math.random() * 400);
+            var vleft = Math.floor(Math.random() * 400);
+            var tamaño = Math.floor(Math.random() * 200) + 100;
+            var color = generarColor(); 
+            var cuadrado = Math.random() < 0.5; 
+
+            document.getElementById("forma").style.display = "block";
+            document.getElementById("forma").style.top = vtop + "px";
+            document.getElementById("forma").style.left = vleft + "px";
+            document.getElementById("forma").style.width = tamaño + "px";
+            document.getElementById("forma").style.height = tamaño + "px";
+            document.getElementById("forma").style.backgroundColor = color;
+
+            if (cuadrado) {
+                document.getElementById("forma").classList.remove("circulo");
+                document.getElementById("forma").classList.add("cuadrado");
+            } else {
+                document.getElementById("forma").classList.remove("cuadrado");
+                document.getElementById("forma").classList.add("circulo");
+            }
+
+            inicio = new Date().getTime();
+        }
+
+        function aparecerFormaDespuesRetraso() {
+            setTimeout(aparecerForma, Math.random() * 2000);
+        }
+
+        function generarColor() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+    </script>
+</body>
+</html>
